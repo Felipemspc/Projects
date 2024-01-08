@@ -42,6 +42,8 @@ h1 {
   cursor: pointer;
   border-radius: 8px;
   transition: transform 0.5s ease;
+  width: 125px;
+  
 }
 .botao:hover {
   transform: rotate(360deg);
