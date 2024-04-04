@@ -2,7 +2,7 @@ let buttonColours = ["red", "blue", "green", "yellow"];
 let gamePattern = [];
 let userClickedPattern = [];
 let gameRunning = false;
-let wrong = new Audio("/ProjectSimonSays/sounds/wrong.mp3");
+let wrong = new Audio("sounds/wrong.mp3");
 let level = 0;
 
 $(document).ready(function () {
@@ -67,7 +67,7 @@ $(document).ready(function () {
 
   // Função para reproduzir o som
   function playSound(name) {
-    let chosenSound = new Audio("/ProjectSimonSays/sounds/" + name + ".mp3");
+    let chosenSound = new Audio("sounds/" + name + ".mp3");
     chosenSound.play();
   }
 
