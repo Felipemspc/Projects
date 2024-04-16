@@ -1,25 +1,39 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100dvh;
   text-align: center;
-  background-color: #011F3F;
+  background-color: #011f3f;
+  margin-top: 20px;
+  
 }
 
 #level-title {
-  font-family: 'Press Start 2P', cursive;
+  font-family: "Press Start 2P", cursive;
   font-size: 3rem;
-  margin:  5%;
-  color: #FEF2BF;
+  margin: 5%;
+  color: #fef2bf;
 }
 
 .container {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
   width: 50%;
-  margin: auto;
-
+  
 }
 
 .btn {
   margin: 25px;
-  display: inline-block;
+ 
   height: 200px;
   width: 200px;
   border: 10px solid black;
