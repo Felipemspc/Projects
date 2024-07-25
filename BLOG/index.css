@@ -1,0 +1,41 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+
+
+  
+  
+  body {
+    height: 100vh;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+/* container dos stickers */
+
+  #corpoStickyNotes {
+    height: 80vh;
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-flow: wrap;
+    align-items: center;
+  }
+  
+  /* estilo dos stickers */
+
+  .stickyNote {
+    width: 200px;
+    height: 210px;
+    background-color: #faec73c2;
+    box-shadow: 15px 15px 10px rgba(0, 0, 0, 0.582);
+  }
+  
