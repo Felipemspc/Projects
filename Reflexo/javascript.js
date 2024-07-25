@@ -16,7 +16,7 @@ $(document).ready(function () {
 
   // Botão que mostra os resultados.
   $("#checkResults").click(function () {
-    displayResults();
+    displayResults(); 
   });
 
   $("#clickToBegin").click(function () {
