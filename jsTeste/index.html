@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TESTE JS</title>
+    <style>
+        #numeros{
+           height: 100vh;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+        #resultadoSoma{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="numeros">
+        <input type="number" name="Numero 1 " id="n1">
+        <input type="number" name="Numero 2 " id="n2">
+        <input type="submit" value="Somar" onclick="somar()">
+        <div>
+            <p>Resultado: </p>
+            <p id="resultadoSoma"></p>
+        </div>   
+        
+    </div>
+    
+
+
+    <script>
+
+        function somar(){
+            let numero1 = document.getElementById("n1").value
+            let numero2 = document.getElementById("n2").value
+            numero1 = parseFloat(numero1);
+            numero2 = parseFloat(numero2);
+            if(isNaN(numero1)|| isNaN(numero2)){
+                alert("Please insert a valid number")
+            }else{
+                let soma = numero1 + numero2 
+                let resultado = document.getElementById("resultadoSoma")
+                resultado.innerText = soma
+            }
+        }
+
+
+
+
+
+    </script>
+
+</body>
+</html>

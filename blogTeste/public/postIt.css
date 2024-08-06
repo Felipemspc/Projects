@@ -1,0 +1,60 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  height: 90vh;
+  width: 100vw;
+}
+#area{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 90vh;
+  width: 90vw;
+
+}
+#corpoStickyNotes {
+    height: 80vh;
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+  
+    align-items: center;
+  }
+
+
+.stickyNote {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: justify;
+    padding: 10px;
+    width: 230px;
+    height: 210px;
+    background-color: #faec73c2;
+    box-shadow: 15px 15px 10px rgba(0, 0, 0, 0.582);
+    
+  }
+  #noteTitulo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: rgb(75, 66, 66);
+    font-style: oblique;
+  }
+  #noteContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    color: rgb(75, 66, 66);
+    font-style: oblique;
+  }
+ 

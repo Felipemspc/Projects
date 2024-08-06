@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="postIt.css">
+    <title>POST ITS</title>
+</head>
+
+<body>
+
+    <div id="area">
+
+        <main id="corpoStickyNotes">
+            <% if(posts.length == 0){ %>
+                <h1 id="semPosts">Sem posts.</h1>
+           <% } %>
+            <% posts.forEach(function(post) { %>
+                <article class="stickyNote">
+                    <h2 id="noteTitulo">
+                        <%= post.titulo %>
+                    </h2> 
+                    <p id="noteContent">
+                        <%= post.texto %>
+                    </p>
+                </article>
+                <form action="/delete" method="post">
+                    <input type="hidden" name="postTitle" value="<%= post.titulo %>">
+                    <input type="submit" value="Delete">
+                </form>
+                <% }); %>
+                
+        </main>
+
+    </div>
+
+
+</body>
+
+</html>
