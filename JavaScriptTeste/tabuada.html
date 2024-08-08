@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+    
+    <div>
+        <input type="number" name="numero1" id="n1" >
+        <input type="submit" value="Gerar Tabuada" onclick="gerarTabuada()">
+    </div>
+    <div id="resultado">
+        <p></p>
+    </div>
+<script>
+    
+    function gerarTabuada(){
+        let n1 = document.getElementById("n1").value;
+        n1 = parseFloat(n1);
+        let resultado = document.getElementById("resultado")
+         resultado.innerHTML = ""
+         if(isNaN(n1)){
+            alert("Preencha com um número válido!")
+        }else{
+        for(let i = 1 ; i <=10 ; i++){
+            resultado.innerHTML+=(`${n1} x ${i} = ${n1*i}<br>`)
+            
+        } }
+       
+    }
+
+</script>
+</body>
+</html>
