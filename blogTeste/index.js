@@ -51,6 +51,34 @@ app.post("/delete",(req,res)=>{
  
 })
 
+// Editando Posts
+
+app.get("/edit",(req,res)=>{
+  const postTitle = req.query.postTitle;
+  const post = posts.find(post => post.titulo === postTitle);
+  if(post){
+    res.render("edit",{post});
+  }else{
+    res.status(404).send({message: "Post não encontrado."});
+  }
+
+
+})
+
+// Post Editado
+
+app.post("/edit",(req,res)=>{
+  const {originalTitle,titulo,conteudo} = req.body;
+  const post = posts.find(post => post.titulo === originalTitle);
+  if(post){
+    post.titulo = titulo;
+    post.texto = conteudo;
+    res.redirect("/posts");
+  }else{
+    res.status(404).send({message:"Post não encontrado."});
+  }
+})
+
 app.listen(port, () => {
   console.log(`App currently running on port: ${port}.`);
 });

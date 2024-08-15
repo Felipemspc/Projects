@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="postIt.css">
+    <title>Edit post</title>
+</head>
+
+<body>
+    
+    <div class="form-container">
+        <form action="/edit" method="POST" >
+            <label for="titulo">Title:</label>
+            <input type="text" id="titulo" name="titulo" value="<%= post.titulo %>">
+
+            <label for="conteudo">Content:</label>
+            <textarea id="conteudo" name="conteudo"><%= post.texto %></textarea>
+
+            <input type="hidden" name="originalTitle" value="<%= post.titulo %>">
+            <button type="submit">Update Post</button>
+        </form>
+    </div>
+</body>
+
+</html>

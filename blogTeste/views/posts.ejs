@@ -13,24 +13,32 @@
     <div id="area">
 
         <main id="corpoStickyNotes">
-            <% if(posts.length == 0){ %>
+            <% if(posts.length==0){ %>
                 <h1 id="semPosts">Sem posts.</h1>
-           <% } %>
-            <% posts.forEach(function(post) { %>
-                <article class="stickyNote">
-                    <h2 id="noteTitulo">
-                        <%= post.titulo %>
-                    </h2> 
-                    <p id="noteContent">
-                        <%= post.texto %>
-                    </p>
-                </article>
-                <form action="/delete" method="post">
-                    <input type="hidden" name="postTitle" value="<%= post.titulo %>">
-                    <input type="submit" value="Delete">
-                </form>
-                <% }); %>
-                
+                <% } %>
+                    <% posts.forEach(function(post) { %>
+                        <div class="post-container">
+                            <article class="stickyNote">
+                                <h2 id="noteTitulo">
+                                    <%= post.titulo %>
+                                </h2>
+                                <p id="noteContent">
+                                    <%= post.texto %>
+                                </p>
+                            </article>
+                            <div id="deleteEdit">
+                                <form action="/delete" method="post">
+                                    <input type="hidden" name="postTitle" value="<%= post.titulo %>">
+                                    <input type="submit" value="Delete">
+                                </form>
+                                <form action="/edit">
+                                    <input type="hidden" name="postTitle" value="<%= post.titulo %>">
+                                    <input type="submit" value="Edit">
+                                </form>
+                            </div>
+                        </div>
+                        <% }); %>
+
         </main>
 
     </div>

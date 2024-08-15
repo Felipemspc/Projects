@@ -1,60 +1,86 @@
-*{
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
-body{
+body {
   height: 90vh;
   width: 100vw;
 }
-#area{
+#area {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  height: 90vh;
-  width: 90vw;
-
+ 
+  height: 100vh;
+  width: 100vw;
 }
 #corpoStickyNotes {
-    height: 80vh;
-    width: 50vw;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    gap: 20px;
+  height: 90vh;
+  width: 90vw;
+  display: grid;   
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(4,15%);
+  gap: 40px;
   
-    align-items: center;
-  }
+}
 
 
 .stickyNote {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    text-align: justify;
-    padding: 10px;
-    width: 230px;
-    height: 210px;
-    background-color: #faec73c2;
-    box-shadow: 15px 15px 10px rgba(0, 0, 0, 0.582);
-    
-  }
-  #noteTitulo{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 18px;
-    color: rgb(75, 66, 66);
-    font-style: oblique;
-  }
-  #noteContent{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 15px;
-    color: rgb(75, 66, 66);
-    font-style: oblique;
-  }
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: justify;
+  flex-direction: column;
+  padding: 10px;
+  width: 200px;
+  height: 200px;
+  background-color: #faec73c2;
+  box-shadow: 15px 15px 10px rgba(0, 0, 0, 0.582);
+}
+#noteTitulo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: rgb(75, 66, 66);
+  font-style: oblique;
+}
+#noteContent {
+  display: flex;
+  flex-direction: column;
  
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  color: rgb(75, 66, 66);
+  font-style: oblique;
+}
+#deleteEdit {
+  display: flex;
+  
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.form-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  margin: 0 auto;
+}
+.form-container form {
+  display: flex;
+  flex-direction: column;
+}
+textarea {
+  resize: none;
+}
+
