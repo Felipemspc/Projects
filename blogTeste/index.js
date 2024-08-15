@@ -23,8 +23,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
-  res.render("index");
+   res.render("index");
+ 
 });
+// rota para botão home do header.
+app.get("/index.ejs",(req,res)=>{
+  res.render("index")
+})
+
+//rota para botao posts do header
 
 app.get("/posts", (req, res) => {
   res.render("posts", { posts });
@@ -77,6 +84,12 @@ app.post("/edit",(req,res)=>{
   }else{
     res.status(404).send({message:"Post não encontrado."});
   }
+})
+
+// get Header 
+
+app.get("/header",(req,res)=>{
+  res.render("header")
 })
 
 app.listen(port, () => {

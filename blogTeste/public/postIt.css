@@ -4,7 +4,8 @@
   box-sizing: border-box;
 }
 body {
-  height: 90vh;
+  
+  background-color: aliceblue;
   width: 100vw;
 }
 #area {
@@ -15,17 +16,27 @@ body {
   height: 100vh;
   width: 100vw;
 }
-#corpoStickyNotes {
-  height: 90vh;
+
+#scrollArea {
+  height: 80vh; /* Altura fixa para a área rolável */
   width: 90vw;
-  display: grid;   
-  justify-content: center;
-  align-items: center;
-  grid-template-columns: repeat(4,15%);
-  gap: 40px;
-  
+  overflow-y: auto; /* Habilita a rolagem vertical */
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Opcional: Adiciona sombra para destaque */
+  scrollbar-width: none;
+  -ms-overflow-style: none; /* Para Internet Explorer e Edge */
 }
 
+#scrollArea::-webkit-scrollbar {
+  display: none; /* Para Chrome, Safari e Opera */
+}
+#corpoStickyNotes {
+  display: grid;   
+  justify-content: center;
+  align-items: flex-start;
+  grid-template-columns: repeat(4, 15%);
+  gap: 40px;
+}
 
 .stickyNote {
   display: flex;
@@ -84,3 +95,41 @@ textarea {
   resize: none;
 }
 
+#headerArea{
+  background-color: #e7e7e7;
+
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  
+  
+}
+#headerArea header{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 10px;
+  text-decoration: none;
+  
+  
+
+}
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+#footerArea{
+   
+  position: sticky;
+  width: 100%;
+  bottom: 0;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  
+
+}
