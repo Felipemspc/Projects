@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste PROMPT + JAVASCRIPT</title>
+</head>
+<body>
+
+    <h1 id="bem-vindo">Bem-vindo, Usuário!</h1>
+    <p id="letras"></p>
+    <p id="parImpar"></p>
+    
+    <script>
+        let nomeUsuario = "";
+
+        while(!nomeUsuario){
+            nomeUsuario = prompt("Qual seu nome?");
+        }
+
+        if(nomeUsuario == null ||nomeUsuario.trim().length <= 0){
+            alert("por favor insira um nome válido!")
+            nomeUsuario = ""
+        }
+
+        document.getElementById("bem-vindo").textContent = `Bem-vindo, ${nomeUsuario.trim()}!`
+        document.getElementById("letras").textContent = `Seu nome contém ${nomeUsuario.length} letras.`
+        
+        if(nomeUsuario.length % 2 === 0){
+            document.getElementById("parImpar").textContent ="O seu nome é Par!"
+        }else{
+            document.getElementById("parImpar").textContent ="O seu nome é Impár!"
+        }
+
+
+    </script>
+</body>
+</html>
