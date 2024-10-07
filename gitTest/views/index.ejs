@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= cambio %>'s Website</title>
+</head>
+<body>
+
+    <h1>Welcome, <%= cambio %>!</h1>
+    <p>This is a dynamic EJS template rendering your name.</p>
+
+    <script>
+        // Verifica se o nome já foi definido
+        if (!sessionStorage.getItem('nameSet')) {
+            let name = prompt("What is your name?");
+            if (name) {
+                // Envia o nome para o servidor via POST
+                fetch("/set-name", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ name: name })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    sessionStorage.setItem('nameSet', 'true');  // Define flag para não repetir o prompt
+                    window.location.reload();  // Recarrega a página com o nome atualizado
+                })
+                .catch(error => console.error('Error:', error));
+            }
+        }
+    </script>
+
+</body>
+</html>

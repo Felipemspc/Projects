@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>BLOG</title>
+</head>
+
+<body>
+
+    <div>
+
+        <main id="corpoStickyNotes">
+
+            <article class="stickyNote">
+                <p id="noteContent"></p>
+            </article>
+
+            <div>
+                <form action="/postado" method="post" id="formulario">
+                    <textarea name="conteudo" id="textInput" placeholder="Write your post." required minlength="10"
+                        maxlength="92"></textarea>
+                    <input type="submit" value="Postar" >
+                </form>
+            </div>
+            
+
+        </main>
+
+    </div>
+
+
+    <script>
+        document.getElementById('formulario').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting the traditional way
+            
+            const textInput = document.getElementById('textInput').value;
+
+            fetch('/postado', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ conteudo: textInput })
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('noteContent').textContent = data.content;
+                document.getElementById('textInput').value = ''; // Clear the textarea after submission
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+
+</html>

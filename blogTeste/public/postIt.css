@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  
+  background-color: aliceblue;
+  width: 100vw;
+}
+#area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+  height: 100vh;
+  width: 100vw;
+}
+
+#scrollArea {
+  height: 80vh; /* Altura fixa para a área rolável */
+  width: 90vw;
+  overflow-y: auto; /* Habilita a rolagem vertical */
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Opcional: Adiciona sombra para destaque */
+  scrollbar-width: none;
+  -ms-overflow-style: none; /* Para Internet Explorer e Edge */
+}
+
+#scrollArea::-webkit-scrollbar {
+  display: none; /* Para Chrome, Safari e Opera */
+}
+#corpoStickyNotes {
+  display: grid;   
+  justify-content: center;
+  align-items: flex-start;
+  grid-template-columns: repeat(4, 15%);
+  gap: 40px;
+}
+
+.stickyNote {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: justify;
+  flex-direction: column;
+  padding: 10px;
+  width: 200px;
+  height: 200px;
+  background-color: #faec73c2;
+  box-shadow: 15px 15px 10px rgba(0, 0, 0, 0.582);
+}
+#noteTitulo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: rgb(75, 66, 66);
+  font-style: oblique;
+}
+#noteContent {
+  display: flex;
+  flex-direction: column;
+ 
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  color: rgb(75, 66, 66);
+  font-style: oblique;
+}
+#deleteEdit {
+  display: flex;
+  
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.form-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  margin: 0 auto;
+}
+.form-container form {
+  display: flex;
+  flex-direction: column;
+}
+textarea {
+  resize: none;
+}
+
+#headerArea{
+  background-color: #e7e7e7;
+
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  
+  
+}
+#headerArea header{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 10px;
+  text-decoration: none;
+  
+  
+
+}
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+#footerArea{
+   
+  position: sticky;
+  width: 100%;
+  bottom: 0;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  
+
+}

@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(101, 202, 202);
+    width: 100dvw;
+    height: 100dvh;
+}
+#container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    width: 90dvw;
+    height: 90dvh;
+}
+#clickToBegin{
+    background-color: yellow;
+    font-size: 3rem;
+}
+
+#target{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 50%;
+    display: none;
+}
+#checkResults{
+    font-size: 1.2rem;
+    background-color:chartreuse;
+}
